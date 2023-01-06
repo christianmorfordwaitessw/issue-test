@@ -2,13 +2,10 @@ name: Bug Report
 description: File a bug report
 title: "[Bug]: "
 labels: ["bug", "triage"]
-assignees:
-  - octocat
 body:
   - type: markdown
     attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
+      value: "### Describe the Bug"
   - type: textarea
     id: what-happened
     attributes:
@@ -18,12 +15,17 @@ body:
       value: "A bug happened!"
     validations:
       required: true
+  - type: markdown
+    attributes:
+      value: "### To Reproduce"
   - type: textarea
     id: reproduce
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
+      label: To Reproduce
+      description: Steps to reproduce the behavior
+  - type: markdown
+    attributes:
+      value: "### Environment"
   - type: input
     id: device
     attributes:
@@ -49,16 +51,6 @@ body:
     validations:
       required: false
   - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-    validations:
-      required: true
-  - type: dropdown
     id: browsers
     attributes:
       label: What browsers are you seeing the problem on?
@@ -68,6 +60,17 @@ body:
         - Chrome
         - Safari
         - Microsoft Edge
+  - type: markdown
+    attributes:
+      value: "### Screenshots"
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem
+  - type: markdown
+    attributes:
+      value: "### Logs"
   - type: textarea
     id: logs
     attributes:
